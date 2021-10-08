@@ -1,10 +1,43 @@
-const user_name = prompt('inserisci il tuo nome:')
+let ctrl_rs = true
 
-const last_name = prompt("inserisci il tuo cognome:")
+while (ctrl_rs == true) {
+    let sc_pw = 1
 
-const color_name = prompt("inserisci il tuo colore preferito:")
+
+    let user_name = prompt("inserisci il tuo nome:");
+    if (user_name == "" | isNaN(user_name) == false) {
+        sc_pw = 0;
+    }
 
 
-const val_pw = user_name + last_name + color_name + "21";
+    let last_name = prompt("inserisci il tuo cognome:");
+    if (last_name == "" | isNaN(last_name) == false) {
+        sc_pw = 0;
+    }
 
-alert("La tua password è " + val_pw);
+
+    let color_name = prompt("inserisci il tuo colore preferito:");
+    if (color_name == "" | isNaN(color_name) == false) {
+        sc_pw = 0;
+    }
+
+    const val_pw = user_name + last_name + color_name + "21";
+
+    if (sc_pw !== 1) {
+        window.alert("la tua password non rispetta i criteri di sicurezza");
+
+        if (confirm('Vuoi reinserire la password rispettando i criteri fondamentali?')) {
+
+        }
+        else {
+            ctrl_rs = false;
+        }
+
+    }
+
+    else {
+        ctrl_rs = false;
+        window.alert("La tua password è " + val_pw);
+    }
+
+}
