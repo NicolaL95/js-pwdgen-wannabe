@@ -37,7 +37,7 @@ while (ctrl_rs == true) {
 
     else {
         ctrl_rs = false;
-        window.alert("La tua password è " + val_pw);
+        document.getElementById("password_generator").innerHTML = val_pw;
     }
 
 }
